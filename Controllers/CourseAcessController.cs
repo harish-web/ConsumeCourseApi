@@ -4,6 +4,7 @@ using System.Collections.Generic;
 
 namespace ConsumeCourseApi.Controllers
 {
+    [Route("[controller]")]
     public class CourseAcessController : Controller
     {
         private readonly IApiService apiService;
@@ -12,7 +13,8 @@ namespace ConsumeCourseApi.Controllers
         {
             this.apiService = apiService;
         }
-     
+        [Route("~/")]
+        [Route("Getcourses")]
         public async Task<IActionResult> GetCourses()
         {
             return Ok(await apiService.GetCourseAsync());

@@ -27,7 +27,7 @@ namespace ConsumeCourseApi.Services
                // client.BaseAddress = new Uri(uristring);
                
                 //var response = await client.GetAsync("Course");
-                var response = await _httpClient.GetAsync("Course");
+                var response = await _httpClient.GetAsync(configuration["defaultrouting"]);
 
 
                 if (response.IsSuccessStatusCode)
